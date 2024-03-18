@@ -1,4 +1,4 @@
-import { prop } from "@typegoose/typegoose"
+import { prop, getModelForClass } from "@typegoose/typegoose"
 
 class User{
 
@@ -15,3 +15,6 @@ class User{
     password: string
 
 }
+
+const UserModel= getModelForClass(User);
+export default UserModel
