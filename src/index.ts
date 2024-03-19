@@ -9,13 +9,22 @@ async function connectDB() {
 connectDB();
 
 async function executeQuery() {
-    
-const user=new User({
-    firstname: "Joe",
-    lastname: "Doe",
-    email: "joedoe@gmail.com",
-    password: "12345"
-})
-await user.save()
+    //---------Create User-----------//
+// const user=new User({
+//     firstname: "Joe",
+//     lastname: "Doe",
+//     email: "joedoe@gmail.com",
+//     password: "123456"
+// })
+// await user.save()
+
+
+//----------------------select users---------------//
+// const users= User.find({},{firstname:1, _id:0});
+// console.log(users)
+
+//-------------select user----------//
+const user= await User.findById("65f9a9c14820867bc6f2b368",{firstname:1, _id:0});
+console.log(user)
 }
 executeQuery()

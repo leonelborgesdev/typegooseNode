@@ -11,7 +11,7 @@ class User{
     @prop({required: true, trim: true})
     email: string
 
-    @prop({required: true, min: 6})
+    @prop({required: true, minlength: 6})
     password: string
 
 }
