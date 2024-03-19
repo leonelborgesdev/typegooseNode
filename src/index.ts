@@ -8,11 +8,14 @@ async function connectDB() {
 
 connectDB();
 
+async function executeQuery() {
+    
 const user=new User({
     firstname: "Joe",
     lastname: "Doe",
     email: "joedoe@gmail.com",
     password: "12345"
 })
-
-console.log(user)
+await user.save()
+}
+executeQuery()
