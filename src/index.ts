@@ -28,9 +28,13 @@ async function executeQuery() {
 // console.log(user)
 
 //------------findOneandUpdate---------------//
-const user= await User.findOneAndUpdate({_id: "65f9a9c14820867bc6f2b368"},
- {firstname:"Ryan"},
-  { new: true})
-console.log(user)
+// const user= await User.findOneAndUpdate({_id: "65f9a9c14820867bc6f2b368"},
+//  {firstname:"Ryan"},
+//   { new: true})
+// console.log(user)
+
+//--------------findbyIdandDelete-----------//
+const userdelete=await User.findByIdAndDelete("65f9a9c14820867bc6f2b368");
+console.log(userdelete)
 }
 executeQuery()
