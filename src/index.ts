@@ -24,7 +24,13 @@ async function executeQuery() {
 // console.log(users)
 
 //-------------select user----------//
-const user= await User.findById("65f9a9c14820867bc6f2b368",{firstname:1, _id:0});
+// const user= await User.findById("65f9a9c14820867bc6f2b368",{firstname:1, _id:0});
+// console.log(user)
+
+//------------findOneandUpdate---------------//
+const user= await User.findOneAndUpdate({_id: "65f9a9c14820867bc6f2b368"},
+ {firstname:"Ryan"},
+  { new: true})
 console.log(user)
 }
 executeQuery()
