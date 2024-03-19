@@ -1,5 +1,9 @@
 import { getModelForClass, prop } from "@typegoose/typegoose"
 
+class Comment{
+    @prop()
+    text: string
+}
 class Product{
 
     @prop({required:true})
@@ -11,8 +15,11 @@ class Product{
     @prop({lowercase: true})
     url: string
 
-    @prop()
+    @prop({type: ()=>[String]})
     tags: string[]
+
+    @prop({type: ()=>[Comment]})
+    comments: Comment[]
 }
 
 const ProductModel=getModelForClass(Product);

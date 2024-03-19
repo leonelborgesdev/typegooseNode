@@ -1,5 +1,6 @@
 import {connect} from "mongoose";
 import User from "./models/User";
+import Product from "./models/Product";
 
 async function connectDB() {
     const db = await connect('mongodb://localhost/typegoosedb');
@@ -38,5 +39,14 @@ async function executeQuery() {
 // console.log(userdelete)
 // const usersdelete= await User.deleteMany({email: "joedoe@gmail.com"})
 // console.log(usersdelete)
+
+    const newProduct= await Product.create({
+        name: "laptop",
+        price: 30,
+        url: "product-01",
+        tags:['laptop','gaming','razer'],
+        comments:[{text: 'awesome product'},{text: 'product x'}]
+    })
+    console.log(newProduct)
 }
 executeQuery()
