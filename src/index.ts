@@ -34,7 +34,9 @@ async function executeQuery() {
 // console.log(user)
 
 //--------------findbyIdandDelete-----------//
-const userdelete=await User.findByIdAndDelete("65f9a9c14820867bc6f2b368");
-console.log(userdelete)
+// const userdelete=await User.findByIdAndDelete("65f9a9c14820867bc6f2b368");
+// console.log(userdelete)
+// const usersdelete= await User.deleteMany({email: "joedoe@gmail.com"})
+// console.log(usersdelete)
 }
 executeQuery()
