@@ -81,8 +81,8 @@ async function executeQuery() {
     // console.log("result", result)
 
     const user=new User({
-            firstname: "ryan",
-            lastname: "Ray",
+            firstname: "michael",
+            lastname: "mich",
             email: "raye@gmail.com",
     })
 

@@ -1,5 +1,9 @@
-import { prop, getModelForClass, Ref, ReturnModelType } from "@typegoose/typegoose"
+import { prop, getModelForClass, Ref, ReturnModelType, pre } from "@typegoose/typegoose"
 import { Role } from "./Role";
+
+@pre<User>('save',function () {
+    console.log(`User ${this.firstname} create`)
+})
 export class User{
 
     @prop({required: true})//propiedades de mongoose
