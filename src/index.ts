@@ -40,14 +40,18 @@ async function executeQuery() {
 // const usersdelete= await User.deleteMany({email: "joedoe@gmail.com"})
 // console.log(usersdelete)
 
-    const newProduct= await Product.create({
-        name: "laptop",
-        price: 30,
-        url: "product-01",
-        tags:['laptop','gaming','razer'],
-        comments:[{text: 'awesome product'},{text: 'product x'}],
-        owner: "65fa54e066bfe1d92d458e0c"
-    })
-    console.log(newProduct)
+    // const newProduct= await Product.create({
+    //     name: "laptop",
+    //     price: 30,
+    //     url: "product-01",
+    //     tags:['laptop','gaming','razer'],
+    //     comments:[{text: 'awesome product'},{text: 'product x'}],
+    //     owner: "65fa54e066bfe1d92d458e0c"
+    // })
+    // console.log(newProduct)
+    
+//-------------select product----------//
+const product= await Product.findById("65fa582196e2ddf2aad117cb").populate("owner");
+console.log(product);
 }
 executeQuery()
