@@ -1,6 +1,6 @@
 import { prop, getModelForClass, Ref, ReturnModelType } from "@typegoose/typegoose"
 import { Role } from "./Role";
-export class Userclass{
+export class User{
 
     @prop({required: true})//propiedades de mongoose
     firstname: string//typescript
@@ -18,12 +18,15 @@ export class Userclass{
     roles: Ref<Role>[]
 
     static async findByFirstName(
-        this: ReturnModelType<typeof Userclass>, 
-        firstName : string
+        this: ReturnModelType<typeof User>, 
+        firstname : string
     ) {
-        return this.find({firstName})
+        return this.find({firstname})
+    }
+    encryptPassword(password: string){
+        return '123zxc'+ password
     }
 }
 
-const UserModel= getModelForClass(Userclass);
+const UserModel= getModelForClass(User);
 export default UserModel
