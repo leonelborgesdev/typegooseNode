@@ -1,10 +1,13 @@
-import { prop, getModelForClass, Ref, ReturnModelType, pre } from "@typegoose/typegoose"
+import { prop, getModelForClass, Ref, ReturnModelType, pre, post } from "@typegoose/typegoose"
 import { Role } from "./Role";
 import bycrypt from "bcryptjs";
 
 @pre<User>('save', async function () {
     this.firstname= this.firstname+" algo"
     this.password= await bycrypt.hash(this.password,10)
+})
+@post<User>('save',function () {
+    console.log(`User ${this.firstname} saved`)
 })
 export class User{
 
