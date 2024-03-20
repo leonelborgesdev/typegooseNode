@@ -1,5 +1,6 @@
-import { getModelForClass, prop } from "@typegoose/typegoose"
+import { Ref, getModelForClass, prop } from "@typegoose/typegoose"
 import { Comment } from "./Comment";
+import { Userclass } from "./User";
 
 class Product{
 
@@ -17,6 +18,9 @@ class Product{
 
     @prop({type: ()=>[Comment]})
     comments: Comment[]
+
+    @prop({ref: ()=> Userclass})
+    owner: Ref<Userclass>
 }
 
 const ProductModel=getModelForClass(Product);

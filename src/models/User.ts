@@ -1,6 +1,6 @@
 import { prop, getModelForClass } from "@typegoose/typegoose"
 
-class User{
+export class Userclass{
 
     @prop({required: true})//propiedades de mongoose
     firstname: string//typescript
@@ -16,5 +16,5 @@ class User{
 
 }
 
-const UserModel= getModelForClass(User);
+const UserModel= getModelForClass(Userclass);
 export default UserModel

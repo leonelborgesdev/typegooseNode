@@ -45,7 +45,8 @@ async function executeQuery() {
         price: 30,
         url: "product-01",
         tags:['laptop','gaming','razer'],
-        comments:[{text: 'awesome product'},{text: 'product x'}]
+        comments:[{text: 'awesome product'},{text: 'product x'}],
+        owner: "65fa54e066bfe1d92d458e0c"
     })
     console.log(newProduct)
 }
