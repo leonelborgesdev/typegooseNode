@@ -1,8 +1,10 @@
 import { prop, getModelForClass, Ref, ReturnModelType, pre } from "@typegoose/typegoose"
 import { Role } from "./Role";
+import bycrypt from "bcryptjs";
 
-@pre<User>('save',function () {
-    console.log(`User ${this.firstname} create`)
+@pre<User>('save', async function () {
+    this.firstname= this.firstname+" algo"
+    this.password= await bycrypt.hash(this.password,10)
 })
 export class User{
 

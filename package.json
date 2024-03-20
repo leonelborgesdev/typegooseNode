@@ -11,11 +11,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.2"
   },
   "dependencies": {
     "@typegoose/typegoose": "^12.2.0",
+    "bcryptjs": "^2.4.3",
     "mongoose": "^8.2.2",
     "nanoid": "^5.0.6"
   }
