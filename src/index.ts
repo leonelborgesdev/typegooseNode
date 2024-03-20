@@ -75,8 +75,19 @@ async function executeQuery() {
 
     // const user= await User.findById("65fa5cfc31eba681c08c14a6").populate('roles', "name -_id")
     // console.log(user)
+    
+    //------------------------Methods typegoose--------------------//
+    // const result=await User.findByFirstName('Joe');
+    // console.log("result", result)
 
-    const result=await User.findByFirstName('Joe');
-    console.log("result", result)
+    const user=new User({
+            firstname: "ryan",
+            lastname: "Ray",
+            email: "raye@gmail.com",
+    })
+
+    user.password= user.encryptPassword("123456")
+    await user.save()
+    console.log("userCreate", user)
 }
 executeQuery()
