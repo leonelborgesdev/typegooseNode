@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@typegoose/typegoose": "^12.2.0",
-    "mongoose": "^8.2.2"
+    "mongoose": "^8.2.2",
+    "nanoid": "^5.0.6"
   }
 }

@@ -1,18 +1,15 @@
 import { getModelForClass, prop } from "@typegoose/typegoose"
+import { Comment } from "./Comment";
 
-class Comment{
-    @prop()
-    text: string
-}
 class Product{
 
-    @prop({required:true})
+    @prop({ required : true})
     name: string
 
-    @prop({type:Number, default: 0})
+    @prop({ type : Number, default: 0})
     price: number
 
-    @prop({lowercase: true})
+    @prop({ lowercase : true})
     url: string
 
     @prop({type: ()=>[String]})
