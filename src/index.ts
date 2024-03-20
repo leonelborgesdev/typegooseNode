@@ -55,12 +55,25 @@ async function executeQuery() {
 const product= await Product.findById("65fa582196e2ddf2aad117cb").populate("owner");
 console.log(product);
 
-const results= await Role.insertMany([
-    {name: 'admin'},
-    {name: 'guest'},
-    {name: 'user'}
-])
+// const results= await Role.insertMany([
+//     {name: 'admin'},
+//     {name: 'guest'},
+//     {name: 'user'}
+// ])
 
-console.log(results)
+    // console.log(results)
+    //---------Create User and roles-----------//
+    // const user=new User({
+    //     firstname: "ryan",
+    //     lastname: "Ray",
+    //     email: "raye@gmail.com",
+    //     password: "123456",
+    //     roles: ["65fa5b410767b191694604f2", "65fa5b410767b191694604f4" ]
+    // })
+    // await user.save()
+    // console.log(user)
+
+    const user= await User.findById("65fa5cfc31eba681c08c14a6").populate('roles')
+    console.log(user)
 }
 executeQuery()

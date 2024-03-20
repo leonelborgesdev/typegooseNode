@@ -1,5 +1,5 @@
-import { prop, getModelForClass } from "@typegoose/typegoose"
-
+import { prop, getModelForClass, Ref } from "@typegoose/typegoose"
+import { Role } from "./Role";
 export class Userclass{
 
     @prop({required: true})//propiedades de mongoose
@@ -14,6 +14,8 @@ export class Userclass{
     @prop({required: true, minlength: 6})
     password: string
 
+    @prop({ref: () => Role})
+    roles: Ref<Role>[]
 }
 
 const UserModel= getModelForClass(Userclass);
