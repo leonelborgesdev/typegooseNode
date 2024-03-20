@@ -1,4 +1,4 @@
-import { prop, getModelForClass, Ref } from "@typegoose/typegoose"
+import { prop, getModelForClass, Ref, ReturnModelType } from "@typegoose/typegoose"
 import { Role } from "./Role";
 export class Userclass{
 
@@ -16,6 +16,13 @@ export class Userclass{
 
     @prop({ref: () => Role})
     roles: Ref<Role>[]
+
+    static async findByFirstName(
+        this: ReturnModelType<typeof Userclass>, 
+        firstName : string
+    ) {
+        return this.find({firstName})
+    }
 }
 
 const UserModel= getModelForClass(Userclass);
