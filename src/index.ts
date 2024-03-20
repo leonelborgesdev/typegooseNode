@@ -1,6 +1,7 @@
 import {connect} from "mongoose";
 import User from "./models/User";
 import Product from "./models/Product";
+import Role from "./models/Role";
 
 async function connectDB() {
     const db = await connect('mongodb://localhost/typegoosedb');
@@ -53,5 +54,13 @@ async function executeQuery() {
 //-------------select product----------//
 const product= await Product.findById("65fa582196e2ddf2aad117cb").populate("owner");
 console.log(product);
+
+const results= await Role.insertMany([
+    {name: 'admin'},
+    {name: 'guest'},
+    {name: 'user'}
+])
+
+console.log(results)
 }
 executeQuery()
