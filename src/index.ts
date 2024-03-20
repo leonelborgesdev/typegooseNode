@@ -73,7 +73,7 @@ console.log(product);
     // await user.save()
     // console.log(user)
 
-    const user= await User.findById("65fa5cfc31eba681c08c14a6").populate('roles')
+    const user= await User.findById("65fa5cfc31eba681c08c14a6").populate('roles', "name -_id")
     console.log(user)
 }
 executeQuery()
